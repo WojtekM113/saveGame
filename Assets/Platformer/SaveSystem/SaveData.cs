@@ -8,10 +8,12 @@ namespace Platformer.SaveSystem
     public class SaveData
     {
         private static SaveData _current;
-        // if(Curent = null){ _current = saveData();}
+        // if(Curent = null)
+        // {
+        //  _current = saveData();}
         public static SaveData Current => _current ??= new SaveData();
         
-        public int xp;
+        public float points;
         public Vector3 playerPosition;
         public Quaternion playerRotation;
     }
