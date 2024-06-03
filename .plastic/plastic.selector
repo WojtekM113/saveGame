@@ -1,0 +1,4 @@
+repository "platformer;oo@Stellaroo@cloud"
+  path "/"
+    br "/main"
+    co "/main"
