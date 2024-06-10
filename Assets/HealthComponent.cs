@@ -1,13 +1,16 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Platformer.SaveSystem;
 using UnityEngine;
 
 public class HealthComponent : MonoBehaviour
 {
     public float health = 100;
-
+    public SaveData saveData;
     public float points;
+
+    public List<string> pointsId;
     // Start is called before the first frame update
 
     private void OnEnable()
@@ -31,9 +34,11 @@ public class HealthComponent : MonoBehaviour
         
     }
 
-    void UpdatePoints()
+    void UpdatePoints(string id)
     {
         points += 1;
+        pointsId.Add(id);
+        
     }
 
     

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Platformer.SaveSystem
@@ -16,6 +17,7 @@ namespace Platformer.SaveSystem
         public float points;
         public Vector3 playerPosition;
         public Quaternion playerRotation;
+        public List<string> listId;
     }
 }
 

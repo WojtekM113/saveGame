@@ -1,16 +1,22 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Platformer.SaveSystem;
 using UnityEngine;
 
 public class PointScript : MonoBehaviour
 {
-    public delegate void CollectedAction();
+    public SaveData saveData;
+    public delegate void CollectedAction(string id);
 
+    public string id;
+    
+ 
     public static event CollectedAction OnPointCollected;
     void Start()
     {
-        
+        id = Guid.NewGuid().ToString();
+ 
     }
 
     // Update is called once per frame
@@ -23,13 +29,10 @@ public class PointScript : MonoBehaviour
     {
         if(OnPointCollected != null)
         {
-            OnPointCollected();
+            OnPointCollected(id); 
         }
+        
         Destroy(this.gameObject);
     }
-
-    void SetPoints()
-    {
-        
-    }
+    
 }
